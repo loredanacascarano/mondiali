@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="it">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Esercizio base HTML + CSS + JQUERY</title>
+      <meta name="description" content="Un semplice esercizio per verificare le abilità nella programmazione frontend">
+      <meta name="author" content="Mario Pallavera">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <style>
+         body {
+         background-color: #1E2B54;
+         color: #FEC20F;
+         padding: 20px;
+         text-align: center;
+         font-family: Verdana;
+         font-size: 12px;
+         }
+         h1 {
+         font-size: 20px;
+         font-weight: bold;
+         text-transform: uppercase;
+         }
+         h3 {
+         font-size: 16px;
+         }
+         .prima_sezione>h3 {
+         font-style: italic;
+         }
+         th {
+         border-bottom: 3px solid #008DD2;
+         }
+         .rigaConBordoInferiore {
+         border-bottom: 1px dotted #01B2EB;
+         }
+         table {
+         margin: auto;
+         border-collapse: collapse;
+         }
+         tbody>tr:hover {
+         background-color: #004089;
+         cursor: pointer;
+         }
+         .azzurri {
+         color: #FFF200;
+         }
+         .prima_sezione {
+         width: 50%;
+         float: left;
+         }
+         .stat {
+         font-weight: bold;
+         color: #FFF200;
+         }
+
+				 .seconda_sezione{
+					 width: 50%;
+					 float: left;
+				 }
+
+	}
+      </style>
+   </head>
+   <body onload="azzurrizzazione()">
+      <div class="prima_sezione">
+         <h1>Finali dei mondiali di calcio</h1>
+         <h3>dal 1990 ad oggi</h3>
+         <table>
+            <thead>
+               <tr>
+                  <th>ANNO</th>
+                  <th>PAESE</th>
+                  <th>VINCITORE</th>
+                  <th>FINALE</th>
+                  <th>RISULTATO</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr id="m2018" class="" onclick=messaggio(id)>
+                  <td id="anno" class="rigaConBordoInferiore">2018</td>
+                  <td class="rigaConBordoInferiore">Russia</td>
+                  <td class="rigaConBordoInferiore">Francia</td>
+                  <td id="match" class="rigaConBordoInferiore" data-team-a="Francia" data-team-b="Croazia">Francia -
+                     Croazia
+                  </td>
+                  <td id="ngoal" data-goal='6' class="rigaConBordoInferiore">4 - 2</td>
+               </tr>
+               <tr id="m2014" class="" onclick="messaggio(id)">
+                  <td class="rigaConBordoInferiore">2014</td>
+                  <td class="rigaConBordoInferiore">Brasile</td>
+                  <td class="rigaConBordoInferiore">Germania</td>
+                  <td id="match" class="rigaConBordoInferiore" data-team-a="Germania" data-team-b="Argentina">Germania
+                     - Argentina
+                  </td>
+                  <td id="ngoal" data-goal='1' class="rigaConBordoInferiore">1 - 0</td>
+               </tr>
+               <tr id="m2010" class="" onclick="messaggio(id)">
+                  <td class="rigaConBordoInferiore">2010</td>
+                  <td class="rigaConBordoInferiore">Sud Africa</td>
+                  <td class="rigaConBordoInferiore">Spagna</td>
+                  <td id="match" class="rigaConBordoInferiore" data-team-b="Olanda" data-team-a="Spagna">Olanda -
+                     Spagna
+                  </td>
+                  <td id="ngoal" data-goal='1' class="rigaConBordoInferiore">0 - 1</td>
+               </tr>
+               <tr id="m2006" class="" onclick="messaggio(id)">
+                  <td class="rigaConBordoInferiore">2006</td>
+                  <td class="rigaConBordoInferiore">Germania</td>
+                  <td class="rigaConBordoInferiore">Italia</td>
+                  <td id="match" class="rigaConBordoInferiore" data-team-a="Italia" data-team-b="Francia">Italia -
+                     Francia
+                  </td>
+                  <td id="ngoal" data-goal='8' class="rigaConBordoInferiore">5 - 3</td>
+               </tr>
+               <tr id="m2002" class="" onclick="messaggio(id)">
+                  <td class="rigaConBordoInferiore">2002</td>
+                  <td class="rigaConBordoInferiore">Giappona/Corea</td>
+                  <td class="rigaConBordoInferiore">Brasile</td>
+                  <td id="match" class="rigaConBordoInferiore" data-team-b="Germania" data-team-a="Brasile">Germania -
+                     Brasile
+                  </td>
+                  <td id="ngoal" data-goal='2' class="rigaConBordoInferiore">0 - 2</td>
+               </tr>
+               <tr id="m1998" class="" onclick="messaggio(id)">
+                  <td class="rigaConBordoInferiore">1998</td>
+                  <td class="rigaConBordoInferiore">Francia</td>
+                  <td class="rigaConBordoInferiore">Francia</td>
+                  <td id="match" class="rigaConBordoInferiore" data-team-b="Brasile" data-team-a="Francia">Brasile -
+                     Francia
+                  </td>
+                  <td id="ngoal" data-goal='3' class="rigaConBordoInferiore">0 - 3</td>
+               </tr>
+               <tr id="m1994" class="" onclick="messaggio(id)">
+                  <td class="rigaConBordoInferiore">1994</td>
+                  <td class="rigaConBordoInferiore">USA</td>
+                  <td class="rigaConBordoInferiore">Brasile</td>
+                  <td id="match" class="rigaConBordoInferiore" data-team-a="Brasile" data-team-b="Italia">Brasile -
+                     Italia
+                  </td>
+                  <td id="ngoal" data-goal='5' class="rigaConBordoInferiore">3 - 2</td>
+               </tr>
+               <tr id="m1990" class="" onclick="messaggio(id)">
+                  <td>1990</td>
+                  <td>Italia</td>
+                  <td>Germania</td>
+                  <td id="match" data-team-a="Germania" data-team-b="Argentina">Germania - Argentina</td>
+                  <td id="ngoal" data-goal='1'>1 - 0</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <div class="seconda_sezione">
+         <h1>Statistiche</h1>
+         <h3 class="stat" id="stat1">Numero totale di finali in archivio: <span id="n_fil"></span></h3>
+         <h3 class="stat" id="stat2">Numero di finali italiane: <span id="ita_n_fil"></span></h3>
+         <h3 class="stat" id="stat3">Totale goal realizzati: <span id="n_goal_totali"></span></h3>
+      </div>
+      <script>
+         var righe_squadre = document.querySelectorAll('[id=match]');
+
+
+         function azzurrizzazione() {
+         	for (var i = 0; i < righe_squadre.length; i++) {
+         		var squadre = righe_squadre[i];
+         		var isItaliaSquadraA = squadre.dataset.teamA == "Italia";
+         		var isItaliaSquadraB = squadre.dataset.teamB == "Italia";
+         		if (isItaliaSquadraA || isItaliaSquadraB) {
+         			var riga = document.getElementsByTagName('tr');
+         			riga[i + 1].className = 'azzurri';
+         		}
+         	}
+         }
+
+         function calcolaPartiteItalia() {
+         	var counter_finali_italia = 0;
+         	for (var i = 0; i < righe_squadre.length; i++) {
+         		var squadre = righe_squadre[i];
+         		var isItaliaSquadraA = squadre.dataset.teamA == "Italia";
+         		var isItaliaSquadraB = squadre.dataset.teamB == "Italia";
+         		if (isItaliaSquadraA || isItaliaSquadraB) {
+         			counter_finali_italia++;
+         		}
+         	}
+         	return counter_finali_italia;
+         }
+
+         function messaggio(id) {
+         	var riga = document.getElementsByTagName('tr');
+         	var squadraA = "";
+         	var squadraB = "";
+         	for (var i = 0; i <= riga.length; i++) {
+         		var id_appoggio = $(riga[i]).attr('id');
+         		if (id_appoggio == id) {
+         			var anno = id.substring(1);
+         			var squadre = righe_squadre[i - 1];
+         			var squadraA = squadre.dataset.teamA;
+         			var squadraB = squadre.dataset.teamB;
+         			break;
+         		}
+         	}
+
+         				var testo_alert = squadraA + " campione del mondo " + anno;
+         				window.alert(testo_alert);
+         }
+
+
+
+         	function calcolaNumeroGoalTotali() {
+         		let n_goal_totali = 0;
+         		var righe_goal = document.querySelectorAll('[id=ngoal]');
+         		for (var i = 0; i < righe_goal.length; i++) {
+         			let riga_goal = righe_goal[i];
+         			let goal = riga_goal.dataset.goal;
+         			n_goal_totali += parseInt(goal);
+         		}
+         		return n_goal_totali;
+         	}
+
+
+         	var riga = document.getElementsByTagName('tr');
+         	document.getElementById("n_fil").innerHTML = riga.length - 1;
+
+         	document.getElementById("ita_n_fil").innerHTML = calcolaPartiteItalia();
+         	document.getElementById("n_goal_totali").innerHTML = calcolaNumeroGoalTotali();
+
+      </script>
+   </body>
+</html>
